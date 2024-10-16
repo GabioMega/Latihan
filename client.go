@@ -186,11 +186,6 @@ func postjson() {
 	return
 }
 func main() {
-	//penyebab error
-	// if !waitForServer("http://127.0.0.1:7777", 30*time.Second) {
-	// 	fmt.Println("server rip")
-	// 	return
-	// }
 	scan := bufio.NewScanner(os.Stdin)
 	for {
 		fmt.Println("1. get")
