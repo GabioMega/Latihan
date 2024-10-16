@@ -15,19 +15,6 @@ import (
 	"time"
 )
 
-func waitForServer(url string, timeout time.Duration) bool {
-	deadline := time.Now().Add(timeout)
-	for time.Now().Before(deadline) {
-		resp, err := http.Get(url)
-		if err == nil && resp.StatusCode == http.StatusOK {
-			resp.Body.Close()
-			return true
-		}
-		time.Sleep(500 * time.Millisecond)
-	}
-	return false
-}
-
 func extractMsg(r *http.Response) (string, error) {
 	data, err := io.ReadAll(r.Body)
 	if err != nil {
