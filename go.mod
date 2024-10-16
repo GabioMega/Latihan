@@ -1,3 +1,3 @@
-module github.com/GabioMega/Latihan
+module main
 
 go 1.22.0
